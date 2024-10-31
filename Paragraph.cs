@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +16,13 @@ namespace Composite_Pattern
         }
 
         public void Add(DocumentComponent component)
-        {   
+        {
+            throw new NotImplementedException("Параграф не может содержать другие компоненты.");
         }
 
         public void Remove(DocumentComponent component)
-        { 
+        {
+            throw new NotImplementedException("Параграф не может содержать другие компоненты.");
         }
 
         public void Display(int value)
