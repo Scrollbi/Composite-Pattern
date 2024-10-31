@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,10 @@ namespace Composite_Pattern
 
         public void Add(DocumentComponent component)
         {
-            _components.Add(component);
+            if (component is Paragraph || component is Section) _components.Add(component);
+            
+            else throw new InvalidOperationException("Раздел может содержать только параграфы и другие разделы.");
+            
         }
 
         public void Remove(DocumentComponent component)
