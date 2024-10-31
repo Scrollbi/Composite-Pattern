@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,10 @@ namespace Composite_Pattern
 
         public void Add(DocumentComponent component)
         {
-            _sections.Add(component);
+            if (component is Section) _sections.Add(component);
+            
+            else throw new InvalidOperationException("Документ может содержать только разделы.");
+            
         }
 
         public void Remove(DocumentComponent component)
